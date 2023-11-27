@@ -1,0 +1,16 @@
+.projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 200px;
+  margin-top: 24px;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 400;
+  text-wrap: wrap;
+  width: min-content;
+  text-transform: uppercase;
+}

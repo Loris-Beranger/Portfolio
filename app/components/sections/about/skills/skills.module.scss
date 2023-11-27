@@ -1,0 +1,76 @@
+.skillsContainer {
+  width: 100%;
+  height: 300px;
+  position: relative;
+}
+
+.screen {
+  position: absolute;
+  filter: blur(3px);
+  opacity: 0.4;
+}
+.screen:nth-child(1) {
+  top: 60px;
+  right: 40px;
+}
+.screen:nth-child(2) {
+  bottom: 20px;
+  left: calc(50% - 60px);
+}
+.screen:nth-child(3) {
+  top: 80px;
+  left: 60px;
+}
+
+.badgeContainer {
+  width: 150px;
+  backdrop-filter: blur(3.5px);
+  background-color: #0e0d0d80;
+  position: absolute;
+  left: calc(50% - 75px);
+  top: 110px;
+  border-radius: 30px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  row-gap: 10px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 12px;
+}
+
+.badge:nth-child(1) {
+  background: linear-gradient(180deg, #5da7fe 0%, #00387a 100%);
+}
+.badge:nth-child(2) {
+  background: linear-gradient(180deg, #93ffff 0%, #59a5ff 100%);
+}
+.badge:nth-child(3) {
+  background: linear-gradient(180deg, #1b05a5 0%, #2b95f7 100%);
+}
+.badge:nth-child(4) {
+  background: linear-gradient(180deg, #aae0ff 0%, #5affce 100%);
+}
+.badge:nth-child(5) {
+  background: linear-gradient(180deg, #9d23da 0%, #2ddfc3 100%);
+}
+.badge:nth-child(6) {
+  background: linear-gradient(180deg, #bbff78 0%, #00540e 100%);
+}
+.badge:nth-child(7) {
+  background: linear-gradient(180deg, #ffa7c1 0%, #ff5050 100%);
+}
+.badge:nth-child(8) {
+  background: linear-gradient(180deg, #e9acff 0%, #ff4fce 100%);
+}
+.badge:nth-child(9) {
+  background: linear-gradient(180deg, #99daff 0%, #a966ff 100%);
+}

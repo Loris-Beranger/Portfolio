@@ -1,0 +1,18 @@
+.indicatorContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: transparent;
+  border: 2px solid var(--white);
+  transition: all 0.3s;
+}
+.indicator.active {
+  background-color: var(--white);
+}

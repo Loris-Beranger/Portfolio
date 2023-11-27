@@ -1,0 +1,15 @@
+.buttonMenuContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  width: 20px;
+  height: 20px;
+}
+
+.line {
+  width: 20px;
+  height: 2px;
+  background-color: white;
+  transition: all 0.3s;
+}

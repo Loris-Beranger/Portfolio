@@ -1,0 +1,17 @@
+.separatorContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 136px;
+  height: 24px;
+
+  .line {
+    width: 88px;
+    height: 4px;
+    background-color: var(--secondary);
+  }
+  .line:last-child {
+    margin-left: 50px;
+  }
+}

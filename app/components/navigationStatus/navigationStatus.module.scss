@@ -1,0 +1,21 @@
+.navigationStatusContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  width: 92px;
+  height: 30px;
+  position: fixed;
+  left: calc(50% - 46px);
+  bottom: 24px;
+}
+
+.line {
+  width: 2px;
+  height: 20px;
+  background-color: white;
+  transition: all 0.3s;
+}
+
+.active {
+  height: 30px;
+}
