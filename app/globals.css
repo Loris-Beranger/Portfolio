@@ -35,8 +35,6 @@ body {
   padding: 24px;
   background: linear-gradient(180deg, #072141 0%, #020c17 100%);
   background-attachment: fixed;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
 }
 
 a {
