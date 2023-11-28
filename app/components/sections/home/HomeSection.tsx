@@ -11,6 +11,7 @@ export const HomeSection = () => {
           src="/profile.jpg"
           width={200}
           height={200}
+          priority
           alt="Picture of the author"
           className={styles.profilePicture}
         />

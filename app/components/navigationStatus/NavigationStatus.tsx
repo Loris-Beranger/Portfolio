@@ -7,7 +7,6 @@ import { useScroll } from '@/app/hooks/useScroll'
 export const NavigationStatus = () => {
   const [activeSection, setActiveSection] = useState('')
   const scrollY = useScroll()
-  console.log(scrollY)
 
   const sectionScroll: any = {
     home: [0, 975],
@@ -31,7 +30,6 @@ export const NavigationStatus = () => {
         section = key
       }
     })
-    console.log(section)
 
     return section
   }

@@ -17,6 +17,7 @@ export const Indicator = ({
     <div className={styles.indicatorContainer}>
       {[...Array(numberImages)].map((_, i) => (
         <div
+          key={i}
           className={`${styles.indicator} ${
             index === i + 1 ? styles.active : ''
           }`}
