@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Navigation />
         {children}
-        <NavigationStatus activeLine={3} />
+        <NavigationStatus />
       </body>
     </html>
   )
