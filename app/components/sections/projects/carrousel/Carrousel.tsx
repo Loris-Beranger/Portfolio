@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
 import styles from './carrousel.module.scss'
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs'
 import { Indicator } from './indicator/Indicator'

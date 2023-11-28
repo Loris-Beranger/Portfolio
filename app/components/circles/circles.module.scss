@@ -1,8 +1,12 @@
 .circlesContainer {
   position: fixed;
+  z-index: -1;
   top: -60px;
   left: -75px;
-  z-index: -1;
+  transition: all 1s;
+}
+.circlesContainer.bottom {
+  transform: translateY(400px);
 }
 
 .circle {
