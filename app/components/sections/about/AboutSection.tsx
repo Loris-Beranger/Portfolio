@@ -5,7 +5,7 @@ import { Skills } from './skills/Skills'
 
 export const AboutSection = () => {
   return (
-    <section className={styles.about}>
+    <section id={'about'} className={styles.about}>
       <Skills />
       <div className={styles.contentContainer}>
         <h1 className={styles.title}>A propos</h1>

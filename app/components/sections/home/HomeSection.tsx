@@ -5,7 +5,7 @@ import { Separator } from '../../separator/Separator'
 
 export const HomeSection = () => {
   return (
-    <section className={styles.home}>
+    <section id={'home'} className={styles.home}>
       <div className={styles.imageContainer}>
         <Image
           src="/profile.jpg"

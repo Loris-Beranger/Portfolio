@@ -5,7 +5,7 @@ import { Carrousel } from './carrousel/Carrousel'
 
 export const ProjectsSection = () => {
   return (
-    <section className={styles.projects}>
+    <section id={'projects'} className={styles.projects}>
       <h2 className={styles.title}>Projets</h2>
       <Carrousel />
     </section>

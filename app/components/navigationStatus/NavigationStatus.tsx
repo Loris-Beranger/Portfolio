@@ -6,14 +6,24 @@ import { useScroll } from '@/app/hooks/useScroll'
 
 export const NavigationStatus = () => {
   const [activeSection, setActiveSection] = useState('')
+  const [sectionScroll, setSectionScroll] = useState<any>({
+    home: [0, 0],
+    about: [0, 0],
+    projects: [0, 0],
+  })
   const scrollY = useScroll()
 
-  const sectionScroll: any = {
-    home: [0, 975],
-    about: [976, 1800],
-    projects: [1801, 3000],
-    contact: [3000, 4000],
-  }
+  useEffect(() => {
+    document.querySelectorAll('main section').forEach((section: any) => {
+      setSectionScroll((prevSectionScroll: any) => ({
+        ...prevSectionScroll,
+        [section.id]: [
+          section.offsetTop - 48,
+          section.offsetTop + section.offsetHeight - 48,
+        ],
+      }))
+    })
+  }, [])
 
   const scrollTo = (position: number) => {
     const main = document.querySelector('main')
