@@ -5,6 +5,7 @@ import { Separator } from './components/separator/Separator'
 import { HomeSection } from './components/sections/home/HomeSection'
 import { AboutSection } from './components/sections/about/AboutSection'
 import { ProjectsSection } from './components/sections/projects/ProjectsSection'
+import { ContactSection } from './components/sections/contact/ContactSection'
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <HomeSection />
       <AboutSection />
       <ProjectsSection />
+      <ContactSection />
     </main>
   )
 }

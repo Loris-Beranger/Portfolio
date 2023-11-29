@@ -10,6 +10,7 @@ export const NavigationStatus = () => {
     home: [0, 0],
     about: [0, 0],
     projects: [0, 0],
+    contact: [0, 0],
   })
   const scrollY = useScroll()
 
