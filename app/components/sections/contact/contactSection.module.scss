@@ -30,11 +30,18 @@
     background: #102c4c;
     padding: 14px;
     color: var(--white-contentMinor);
-    border: none;
     width: 100%;
+    outline: none;
+    box-sizing: border-box;
+    border: 0.5px solid transparent;
+    text-overflow: ellipsis;
 
     &::placeholder {
       color: rgba(255, 255, 255, 0.2);
+    }
+
+    &:focus {
+      border: 0.5px solid rgba(0, 196, 149, 1);
     }
   }
 

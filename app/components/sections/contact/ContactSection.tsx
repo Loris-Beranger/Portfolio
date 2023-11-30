@@ -4,6 +4,7 @@ import React, { useRef } from 'react'
 import styles from './contactSection.module.scss'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import emailjs from '@emailjs/browser'
+import toast, { Toaster } from 'react-hot-toast'
 
 type Inputs = {
   name: string
@@ -15,7 +16,6 @@ export const ContactSection = () => {
   const formRef = useRef<HTMLFormElement>(null)
   const { register, handleSubmit } = useForm<Inputs>()
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(data)
     if (formRef.current) {
       emailjs
         .sendForm(
@@ -26,10 +26,10 @@ export const ContactSection = () => {
         )
         .then(
           (result) => {
-            console.log(result.text)
+            toast.success('Message envoyé !')
           },
           (error) => {
-            console.log(error.text)
+            toast.success(error.text)
           }
         )
     }
@@ -51,7 +51,7 @@ export const ContactSection = () => {
             className={styles.inputName}
             type="text"
             placeholder="Beranger"
-            {...register('name')}
+            {...(register('name'), { required: true, maxLength: 20 })}
           />
         </div>
         <div className={styles.inputContainer}>
@@ -62,7 +62,7 @@ export const ContactSection = () => {
             className={styles.inputMail}
             type="email"
             placeholder="loris.beranger1@gmail.com"
-            {...register('mail')}
+            {...(register('mail'), { required: true, maxLength: 60 })}
           />
         </div>
         <div className={styles.inputContainer}>
@@ -73,7 +73,7 @@ export const ContactSection = () => {
             className={styles.inputObject}
             type="text"
             placeholder="Objet"
-            {...register('object')}
+            {...(register('object'), { required: true, maxLength: 60 })}
           />
         </div>
         <div className={styles.inputContainer}>
@@ -83,11 +83,12 @@ export const ContactSection = () => {
           <textarea
             className={styles.inputMessage}
             placeholder="Bonjour..."
-            {...register('message')}
+            {...(register('message'), { required: true })}
           />
         </div>
         <input className={styles.inputSubmit} type="submit" value="Envoyer" />
       </form>
+      <Toaster />
     </section>
   )
 }
