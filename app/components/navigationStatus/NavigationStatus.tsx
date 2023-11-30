@@ -5,7 +5,7 @@ import styles from './navigationStatus.module.scss'
 import { useScroll } from '@/app/hooks/useScroll'
 
 export const NavigationStatus = () => {
-  const [activeSection, setActiveSection] = useState('')
+  const [activeSection, setActiveSection] = useState('home')
   const [sectionScroll, setSectionScroll] = useState<any>({
     home: [0, 0],
     about: [0, 0],
@@ -46,7 +46,9 @@ export const NavigationStatus = () => {
   }
 
   useEffect(() => {
-    setActiveSection(getSection(scrollY))
+    if (scrollY > 0) {
+      setActiveSection(getSection(scrollY))
+    }
   }, [scrollY])
 
   return (
