@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { Navigation } from './components/navigation/Navigation'
@@ -18,6 +19,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, viewport-fit=cover"
+        />
+      </Head>
       <body className={inter.className}>
         <Navigation />
         {children}
