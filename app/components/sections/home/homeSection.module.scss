@@ -1,9 +1,13 @@
 .home {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding-bottom: 200px;
+  justify-content: space-around;
   margin-top: 24px;
+
+  @media screen and (min-width: 390px) {
+    justify-content: space-between;
+    padding-bottom: 80px;
+  }
 }
 .imageContainer {
   display: flex;
@@ -26,14 +30,22 @@
 }
 
 .title {
-  font-size: 3rem;
+  font-size: var(--size-sm-title);
   font-weight: 400;
   text-wrap: wrap;
   width: min-content;
   text-transform: uppercase;
+
+  @media screen and (min-width: 390px) {
+    font-size: var(--size-md-title);
+  }
 }
 .subtitle {
-  font-size: 1.2rem;
+  font-size: var(--size-sm-subtitle);
   font-weight: 400;
   letter-spacing: 1.5px;
+
+  @media screen and (min-width: 390px) {
+    font-size: var(--size-md-subtitle);
+  }
 }

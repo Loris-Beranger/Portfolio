@@ -2,8 +2,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding-bottom: 20px;
   margin-top: 24px;
+
+  @media screen and (min-width: 390px) {
+    padding-bottom: 20px;
+  }
 }
 .imageContainer {
   display: flex;
@@ -26,23 +29,37 @@
 }
 
 .title {
-  font-size: 3rem;
+  font-size: var(--size-sm-title);
   font-weight: 400;
   text-wrap: wrap;
   text-transform: uppercase;
+
+  @media screen and (min-width: 390px) {
+    font-size: var(--size-md-title);
+  }
 }
 .subtitle {
-  font-size: 1.2rem;
+  font-size: var(--size-sm-subtitle);
   font-weight: 400;
   letter-spacing: 1.5px;
+
+  @media screen and (min-width: 390px) {
+    font-size: var(--size-md-subtitle);
+  }
 }
 
 .paragraph {
-  font-size: 0.8rem;
+  font-size: var(--size-sm-content);
   font-weight: 300;
-  letter-spacing: 1.5px;
-  line-height: 1.2rem;
+  letter-spacing: 1.3px;
+  line-height: 1.1rem;
   color: var(--white-contentMinor);
+
+  @media screen and (min-width: 390px) {
+    font-size: var(--size-md-content);
+    letter-spacing: 1.5px;
+    line-height: 1.2rem;
+  }
 
   span {
     display: block;
