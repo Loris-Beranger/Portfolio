@@ -15,12 +15,13 @@ export const NavigationStatus = () => {
   const scrollY = useScroll()
 
   useEffect(() => {
+    const firstSection = document.querySelector('#home') as HTMLElement
     document.querySelectorAll('main section').forEach((section: any) => {
       setSectionScroll((prevSectionScroll: any) => ({
         ...prevSectionScroll,
         [section.id]: [
-          section.offsetTop - 48,
-          section.offsetTop + section.offsetHeight - 48,
+          section.offsetTop - firstSection.offsetTop,
+          section.offsetTop + section.offsetHeight - firstSection.offsetTop,
         ],
       }))
     })
