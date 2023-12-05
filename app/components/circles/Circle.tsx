@@ -6,7 +6,9 @@ import { useScroll } from '@/app/hooks/useScroll'
 
 export const Circles = () => {
   const scrollY = useScroll()
-  const sectionProjects = document.querySelector('#projects') as HTMLElement
+  const sectionProjects = window.document.querySelector(
+    '#projects'
+  ) as HTMLElement
   const projectSectionPosition = sectionProjects?.offsetTop - 48
   return (
     <div
