@@ -11,18 +11,8 @@
     height: 4px;
     border-radius: 2px;
     background-color: var(--secondary);
-    animation: grow 1s ease-in-out;
   }
   .line:last-child {
     margin-left: 50px;
-  }
-}
-
-@keyframes grow {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 88px;
   }
 }
