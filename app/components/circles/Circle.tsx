@@ -1,15 +1,18 @@
 'use client'
 
-import React from 'react'
+import React, { use, useEffect, useState } from 'react'
 import styles from './circles.module.scss'
 import { useScroll } from '@/app/hooks/useScroll'
 
 export const Circles = () => {
+  const [projectSectionPosition, setProjectSectionPosition] = useState(0)
   const scrollY = useScroll()
-  const sectionProjects = window.document.querySelector(
-    '#projects'
-  ) as HTMLElement
-  const projectSectionPosition = sectionProjects?.offsetTop - 48
+
+  useEffect(() => {
+    const sectionProjects = document?.querySelector('#projects') as HTMLElement
+    setProjectSectionPosition(sectionProjects?.offsetTop - 48)
+  }, [])
+
   return (
     <div
       className={`${styles.circlesContainer} ${
