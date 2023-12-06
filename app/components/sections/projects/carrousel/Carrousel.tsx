@@ -1,14 +1,34 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import styles from './carrousel.module.scss'
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs'
 import { Indicator } from './indicator/Indicator'
 import Image from 'next/image'
+import { useAnimation, useInView, motion } from 'framer-motion'
 
 export const Carrousel = () => {
   const [index, setIndex] = useState(1)
   const images = ['meteo.png', 'meteo2.png', 'meteo.png']
+
+  const controls = useAnimation()
+  const ref = useRef<any>(null)
+  const inView = useInView(ref, { once: true })
+
+  const animation = {
+    hidden: { transform: 'translateY(100px)', opacity: 0 },
+    visible: { transform: 'translateY(0)', opacity: 1 },
+  }
+  const animation2 = {
+    hidden: { transform: 'translateX(-100px)', opacity: 0 },
+    visible: { transform: 'translateX(0)', opacity: 1 },
+  }
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible')
+    }
+  }, [controls, inView])
 
   useEffect(() => {
     if (index > images.length) {
@@ -22,7 +42,11 @@ export const Carrousel = () => {
   return (
     <div className={styles.carrouselContainer}>
       <div className={styles.carrousel}>
-        <button
+        <motion.button
+          initial={'hidden'}
+          animate={controls}
+          variants={animation}
+          transition={{ duration: 0.4, ease: 'easeOut', delay: 0.6 }}
           className={styles.buttonLeft}
           onClick={() => setIndex((prev) => prev - 1)}
         >
@@ -48,8 +72,15 @@ export const Carrousel = () => {
               fillOpacity="0.8"
             />
           </svg>
-        </button>
-        <div className={styles.imageContainer}>
+        </motion.button>
+        <motion.div
+          ref={ref}
+          initial={'hidden'}
+          animate={controls}
+          variants={animation}
+          transition={{ duration: 0.5, ease: 'easeOut', delay: 0.4 }}
+          className={styles.imageContainer}
+        >
           <Image
             src={`/img/projects/${images[index - 1]}`}
             width={200}
@@ -58,18 +89,42 @@ export const Carrousel = () => {
             className={styles.backgroundImage}
           />
           <div className={styles.textContainer}>
-            <h5 className={styles.title}>Météo</h5>
-            <p className={styles.description}>
+            <motion.h5
+              initial={'hidden'}
+              animate={controls}
+              variants={animation2}
+              transition={{ duration: 0.5, ease: 'easeOut', delay: 0.6 }}
+              className={styles.title}
+            >
+              Météo
+            </motion.h5>
+            <motion.p
+              initial={'hidden'}
+              animate={controls}
+              variants={animation2}
+              transition={{ duration: 0.5, ease: 'easeOut', delay: 0.7 }}
+              className={styles.description}
+            >
               Application mobile de prévision météo développée en React Native
               ansi que l’api Open Weather{' '}
-            </p>
+            </motion.p>
           </div>
-          <ul className={styles.tagList}>
+          <motion.ul
+            initial={'hidden'}
+            animate={controls}
+            variants={animation2}
+            transition={{ duration: 0.5, ease: 'easeOut', delay: 0.8 }}
+            className={styles.tagList}
+          >
             <li className={styles.tag}>Open Weather Api</li>
             <li className={styles.tag}>React Native</li>
-          </ul>
-        </div>
-        <button
+          </motion.ul>
+        </motion.div>
+        <motion.button
+          initial={'hidden'}
+          animate={controls}
+          variants={animation}
+          transition={{ duration: 0.4, ease: 'easeOut', delay: 0.6 }}
           className={styles.buttonRight}
           onClick={() => setIndex((prev) => prev + 1)}
         >
@@ -96,7 +151,7 @@ export const Carrousel = () => {
               fillOpacity="0.8"
             />
           </svg>
-        </button>
+        </motion.button>
       </div>
       <Indicator numberImages={3} index={index} setIndex={setIndex} />
     </div>
