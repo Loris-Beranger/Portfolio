@@ -8,7 +8,7 @@ import { Carrousel } from './carrousel/Carrousel'
 export const ProjectsSection = () => {
   const controls = useAnimation()
   const ref = useRef<any>(null)
-  const inView = useInView(ref, { once: true })
+  const inView = useInView(ref)
 
   const animation = {
     hidden: { transform: 'translateY(100px)', opacity: 0 },
@@ -18,6 +18,8 @@ export const ProjectsSection = () => {
   useEffect(() => {
     if (inView) {
       controls.start('visible')
+    } else {
+      controls.start('hidden')
     }
   }, [controls, inView])
 

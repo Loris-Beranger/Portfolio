@@ -8,17 +8,9 @@ import { Skills } from './skills/Skills'
 import { motion, useAnimation, useInView } from 'framer-motion'
 
 export const AboutSection = () => {
-  const controls1 = useAnimation()
-  const ref1 = useRef<HTMLDivElement>(null)
-  const inView1 = useInView(ref1, { once: true })
-
-  const controls2 = useAnimation()
-  const ref2 = useRef<HTMLHeadingElement>(null)
-  const inView2 = useInView(ref2, { once: true })
-
-  const controls3 = useAnimation()
-  const ref3 = useRef<HTMLParagraphElement>(null)
-  const inView3 = useInView(ref3, { once: true })
+  const controls = useAnimation()
+  const ref = useRef<HTMLDivElement>(null)
+  const inView = useInView(ref)
 
   const animationVariants1 = {
     hidden: { transform: 'translateX(-100%)' },
@@ -36,31 +28,21 @@ export const AboutSection = () => {
   }
 
   useEffect(() => {
-    if (inView1) {
-      controls1.start('visible')
+    if (inView) {
+      controls.start('visible')
+    } else {
+      controls.start('hidden')
     }
-  }, [controls1, inView1])
-
-  useEffect(() => {
-    if (inView2) {
-      controls2.start('visible')
-    }
-  }, [controls2, inView2])
-
-  useEffect(() => {
-    if (inView3) {
-      controls3.start('visible')
-    }
-  }, [controls3, inView3])
+  }, [controls, inView])
 
   return (
     <section id="about" className={styles.about}>
       <Skills />
       <div className={styles.contentContainer}>
         <motion.h1
-          ref={ref1}
+          ref={ref}
           initial="hidden"
-          animate={controls1}
+          animate={controls}
           variants={animationVariants1}
           transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
           className={styles.title}
@@ -69,9 +51,8 @@ export const AboutSection = () => {
         </motion.h1>
         <Separator />
         <motion.h2
-          ref={ref2}
           initial="hidden"
-          animate={controls2}
+          animate={controls}
           variants={animationVariants2}
           transition={{ duration: 0.4, ease: 'easeOut', delay: 0.2 }}
           className={styles.subtitle}
@@ -79,9 +60,8 @@ export const AboutSection = () => {
           Développeur web
         </motion.h2>
         <motion.p
-          ref={ref3}
           initial="hidden"
-          animate={controls3}
+          animate={controls}
           variants={animationVariants3}
           transition={{ duration: 0.4, ease: 'easeOut', delay: 0.3 }}
           className={styles.paragraph}

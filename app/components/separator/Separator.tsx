@@ -7,7 +7,7 @@ import { motion, useAnimation, useInView } from 'framer-motion'
 export const Separator = () => {
   const controls = useAnimation()
   const ref = useRef<HTMLDivElement>(null)
-  const inView = useInView(ref, { once: true })
+  const inView = useInView(ref)
 
   const animationVariants = {
     hidden: { width: 0 },
@@ -16,6 +16,8 @@ export const Separator = () => {
   useEffect(() => {
     if (inView) {
       controls.start('visible')
+    } else {
+      controls.start('hidden')
     }
   }, [controls, inView])
   return (
