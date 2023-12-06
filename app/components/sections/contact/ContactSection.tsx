@@ -1,10 +1,11 @@
 'use client'
 
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import styles from './contactSection.module.scss'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import emailjs from '@emailjs/browser'
 import toast, { Toaster } from 'react-hot-toast'
+import { useAnimation, useInView, motion } from 'framer-motion'
 
 type Inputs = {
   name: string
@@ -15,6 +16,25 @@ type Inputs = {
 export const ContactSection = () => {
   const formRef = useRef<HTMLFormElement>(null)
   const { register, handleSubmit } = useForm<Inputs>()
+  const controls = useAnimation()
+  const ref = useRef<HTMLDivElement>(null)
+  const inView = useInView(ref)
+
+  const animation = {
+    hidden: { transform: 'translateY(100px)', opacity: 0 },
+    visible: { transform: 'translateY(0)', opacity: 1 },
+  }
+  const animation2 = {
+    hidden: { width: '50%', opacity: 0 },
+    visible: { width: '100%', opacity: 1 },
+  }
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible')
+    } else {
+      controls.start('hidden')
+    }
+  }, [controls, inView])
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     if (formRef.current) {
       emailjs
@@ -37,13 +57,28 @@ export const ContactSection = () => {
 
   return (
     <section id={'contact'} className={styles.contactContainer}>
-      <h2 className={styles.title}>Contact</h2>
+      <motion.h2
+        ref={ref}
+        initial="hidden"
+        animate={controls}
+        variants={animation}
+        transition={{ duration: 0.4, ease: 'easeOut', delay: 0.2 }}
+        className={styles.title}
+      >
+        Contact
+      </motion.h2>
       <form
         ref={formRef}
         className={styles.formContainer}
         onSubmit={handleSubmit(onSubmit)}
       >
-        <div className={styles.inputContainer}>
+        <motion.div
+          initial="hidden"
+          animate={controls}
+          variants={animation}
+          transition={{ duration: 0.5, ease: 'easeOut', delay: 0.4 }}
+          className={styles.inputContainer}
+        >
           <label className={styles.labelName} htmlFor="name">
             Nom
           </label>
@@ -53,8 +88,14 @@ export const ContactSection = () => {
             placeholder="Beranger"
             {...(register('name'), { required: true, maxLength: 20 })}
           />
-        </div>
-        <div className={styles.inputContainer}>
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          animate={controls}
+          variants={animation}
+          transition={{ duration: 0.5, ease: 'easeOut', delay: 0.4 }}
+          className={styles.inputContainer}
+        >
           <label className={styles.labelMail} htmlFor="email">
             Email
           </label>
@@ -64,8 +105,14 @@ export const ContactSection = () => {
             placeholder="loris.beranger1@gmail.com"
             {...(register('mail'), { required: true, maxLength: 60 })}
           />
-        </div>
-        <div className={styles.inputContainer}>
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          animate={controls}
+          variants={animation}
+          transition={{ duration: 0.5, ease: 'easeOut', delay: 0.5 }}
+          className={styles.inputContainer}
+        >
           <label className={styles.labelObject} htmlFor="Site web">
             Objet
           </label>
@@ -75,8 +122,14 @@ export const ContactSection = () => {
             placeholder="Objet"
             {...(register('object'), { required: true, maxLength: 60 })}
           />
-        </div>
-        <div className={styles.inputContainer}>
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          animate={controls}
+          variants={animation}
+          transition={{ duration: 0.5, ease: 'easeOut', delay: 0.6 }}
+          className={styles.inputContainer}
+        >
           <label className={styles.labelMessage} htmlFor="message">
             Message
           </label>
@@ -85,8 +138,16 @@ export const ContactSection = () => {
             placeholder="Bonjour..."
             {...(register('message'), { required: true })}
           />
-        </div>
-        <input className={styles.inputSubmit} type="submit" value="Envoyer" />
+        </motion.div>
+        <motion.input
+          initial="hidden"
+          animate={controls}
+          variants={animation2}
+          transition={{ duration: 0.4, ease: 'easeOut', delay: 0.7 }}
+          className={styles.inputSubmit}
+          type="submit"
+          value="Envoyer"
+        />
       </form>
       <Toaster />
     </section>
