@@ -13,18 +13,18 @@ export const AboutSection = () => {
   const inView = useInView(ref)
 
   const animationVariants1 = {
-    hidden: { transform: 'translateX(-100%)' },
-    visible: { transform: 'translateX(0)' },
+    hidden: { transform: 'translateX(-100%)', opacity: 0 },
+    visible: { transform: 'translateX(0)', opacity: 1 },
   }
 
   const animationVariants2 = {
-    hidden: { transform: 'translateX(-100%)' },
-    visible: { transform: 'translateX(0)' },
+    hidden: { transform: 'translateX(-100%)', opacity: 0 },
+    visible: { transform: 'translateX(0)', opacity: 1 },
   }
 
   const animationVariants3 = {
-    hidden: { transform: 'translateX(-100%)' },
-    visible: { transform: 'translateX(0)' },
+    hidden: { transform: 'translateX(-100%)', opacity: 0 },
+    visible: { transform: 'translateX(0)', opacity: 1 },
   }
 
   useEffect(() => {

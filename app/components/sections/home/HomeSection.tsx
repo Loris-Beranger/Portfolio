@@ -17,8 +17,8 @@ export const HomeSection = () => {
   }
 
   const animationVariants2 = {
-    hidden: { transform: 'translateX(-100%)' },
-    visible: { transform: 'translateX(0)' },
+    hidden: { transform: 'translateX(-100%)', opacity: 0 },
+    visible: { transform: 'translateX(0)', opacity: 1 },
   }
 
   useEffect(() => {
