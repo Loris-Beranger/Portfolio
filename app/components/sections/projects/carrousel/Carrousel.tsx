@@ -45,6 +45,7 @@ export const Carrousel = () => {
     <div className={styles.carrouselContainer}>
       <div className={styles.carrousel}>
         <motion.button
+          ref={ref}
           initial={'hidden'}
           animate={controls}
           variants={animation}
@@ -76,7 +77,6 @@ export const Carrousel = () => {
           </svg>
         </motion.button>
         <motion.div
-          ref={ref}
           initial={'hidden'}
           animate={controls}
           variants={animation}

@@ -58,7 +58,6 @@ export const ContactSection = () => {
   return (
     <section id={'contact'} className={styles.contactContainer}>
       <motion.h2
-        ref={ref}
         initial="hidden"
         animate={controls}
         variants={animation}
@@ -73,6 +72,7 @@ export const ContactSection = () => {
         onSubmit={handleSubmit(onSubmit)}
       >
         <motion.div
+          ref={ref}
           initial="hidden"
           animate={controls}
           variants={animation}

@@ -1,0 +1,23 @@
+@import './constants.scss';
+
+.title {
+  font-family: $font-title;
+  font-size: 2rem;
+  font-weight: 400;
+  color: $white-content;
+  text-transform: uppercase;
+
+  @media screen and (min-width: 390px) {
+    font-size: 2.5rem;
+  }
+}
+.paragraph {
+  font-family: $font-title;
+  font-size: 0.6rem;
+  font-weight: 300;
+  color: $white-contentMinor;
+
+  @media screen and (min-width: 390px) {
+    font-size: 0.7rem;
+  }
+}

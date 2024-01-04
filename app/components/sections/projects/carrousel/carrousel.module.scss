@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
-  height: 60%;
+  height: 70%;
 }
 
 .carrousel {
@@ -61,13 +61,7 @@
 }
 
 .title {
-  font-size: var(--size-sm-title);
   margin-bottom: 60px;
-  font-weight: 500;
-
-  @media screen and (min-width: 390px) {
-    font-size: var(--size-md-title);
-  }
 }
 .description {
   font-size: 14px;

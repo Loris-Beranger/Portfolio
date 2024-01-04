@@ -30,11 +30,8 @@
 }
 
 .title {
-  font-size: var(--size-sm-title);
-  font-weight: 400;
   text-wrap: wrap;
   width: min-content;
-  text-transform: uppercase;
 
   @media screen and (min-width: 390px) {
     font-size: var(--size-md-title);

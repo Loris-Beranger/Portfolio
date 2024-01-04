@@ -1,15 +1,16 @@
 'use client'
 
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import styles from './homeSection.module.scss'
 import { Separator } from '../../separator/Separator'
 import { motion, useAnimation, useInView } from 'framer-motion'
+import { Title } from '../../common/Typography'
+import { useStore } from '@/app/store'
 
 export const HomeSection = () => {
   const controls = useAnimation()
-  const ref = useRef<HTMLDivElement>(null)
-  const inView = useInView(ref)
+  const { activeSection } = useStore()
 
   const animationVariants1 = {
     hidden: { transform: 'translateX(-100%)', opacity: 0 },
@@ -22,12 +23,14 @@ export const HomeSection = () => {
   }
 
   useEffect(() => {
-    if (inView) {
+    if (activeSection === 'home') {
       controls.start('visible')
     } else {
       controls.start('hidden')
     }
-  }, [controls, inView])
+  }, [controls, activeSection])
+
+  const MotionTitle = motion(Title)
 
   return (
     <section id="home" className={styles.home}>
@@ -42,8 +45,7 @@ export const HomeSection = () => {
         />
       </div>
       <div className={styles.contentContainer}>
-        <motion.h1
-          ref={ref}
+        <MotionTitle
           initial="hidden"
           animate={controls}
           variants={animationVariants1}
@@ -51,7 +53,7 @@ export const HomeSection = () => {
           className={styles.title}
         >
           Beranger Loris
-        </motion.h1>
+        </MotionTitle>
         <Separator />
         <motion.h2
           initial="hidden"

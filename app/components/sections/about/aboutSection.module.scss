@@ -29,10 +29,7 @@
 }
 
 .title {
-  font-size: var(--size-sm-title);
-  font-weight: 400;
   text-wrap: wrap;
-  text-transform: uppercase;
 
   @media screen and (min-width: 390px) {
     font-size: var(--size-md-title);
@@ -49,16 +46,9 @@
 }
 
 .paragraph {
-  font-size: var(--size-sm-content);
-  font-weight: 300;
-  letter-spacing: 1.3px;
-  line-height: 1.1rem;
-  color: var(--white-contentMinor);
-
   @media screen and (min-width: 390px) {
-    font-size: var(--size-md-content);
-    letter-spacing: 1.5px;
-    line-height: 1.2rem;
+    letter-spacing: 1.3px;
+    line-height: 1.1rem;
   }
 
   span {

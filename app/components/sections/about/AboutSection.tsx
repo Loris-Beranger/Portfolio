@@ -6,6 +6,7 @@ import styles from './aboutSection.module.scss'
 import { Separator } from '../../separator/Separator'
 import { Skills } from './skills/Skills'
 import { motion, useAnimation, useInView } from 'framer-motion'
+import { P, Title } from '../../common/Typography'
 
 export const AboutSection = () => {
   const controls = useAnimation()
@@ -35,11 +36,13 @@ export const AboutSection = () => {
     }
   }, [controls, inView])
 
+  const MotionTitle = motion(Title)
+
   return (
     <section id="about" className={styles.about}>
       <Skills />
       <div className={styles.contentContainer}>
-        <motion.h1
+        <MotionTitle
           ref={ref}
           initial="hidden"
           animate={controls}
@@ -48,7 +51,7 @@ export const AboutSection = () => {
           className={styles.title}
         >
           A propos
-        </motion.h1>
+        </MotionTitle>
         <Separator />
         <motion.h2
           initial="hidden"
@@ -59,7 +62,7 @@ export const AboutSection = () => {
         >
           Développeur web
         </motion.h2>
-        <motion.p
+        <P
           initial="hidden"
           animate={controls}
           variants={animationVariants3}
@@ -76,7 +79,7 @@ export const AboutSection = () => {
             Explorez mon portfolio pour voir les différents <em>projets</em> que
             j’ai pu réaliser
           </span>
-        </motion.p>
+        </P>
       </div>
     </section>
   )

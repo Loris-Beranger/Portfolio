@@ -3,9 +3,10 @@
 import { useEffect, useState } from 'react'
 import styles from './navigationStatus.module.scss'
 import { useScroll } from '@/app/hooks/useScroll'
+import { useStore } from '@/app/store'
 
 export const NavigationStatus = () => {
-  const [activeSection, setActiveSection] = useState('home')
+  const { activeSection, setActiveSection } = useStore()
   const [sectionScroll, setSectionScroll] = useState<any>({
     home: [0, 0],
     about: [0, 0],
@@ -42,7 +43,7 @@ export const NavigationStatus = () => {
         section = key
       }
     })
-
+    setActiveSection(section)
     return section
   }
 

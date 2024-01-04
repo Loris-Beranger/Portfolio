@@ -8,15 +8,8 @@
 }
 
 .title {
-  font-size: var(--size-sm-title);
-  font-weight: 400;
   text-wrap: wrap;
   width: min-content;
-  text-transform: uppercase;
-
-  @media screen and (min-width: 390px) {
-    font-size: var(--size-md-title);
-  }
 }
 
 .formContainer {
@@ -30,7 +23,7 @@
   textarea {
     border-radius: 12px;
     background: #102c4c;
-    padding: 14px;
+    padding: 10px;
     color: var(--white-contentMinor);
     width: 100%;
     outline: none;
@@ -48,7 +41,7 @@
   }
 
   textarea {
-    height: 200px;
+    height: 150px;
     resize: none;
   }
 
