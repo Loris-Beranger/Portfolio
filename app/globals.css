@@ -12,12 +12,12 @@
   --font-title: 'Rubik', sans-serif;
 
   --size-sm-title: 10vw;
-  --size-sm-subtitle: 3vw;
+  --size-sm-subtitle: 5vw;
   --size-sm-content: 2.5vw;
   --size-sm-button: 3vw;
 
   --size-md-title: 12vw;
-  --size-md-subtitle: 5vw;
+  --size-md-subtitle: 6vw;
   --size-md-content: 3vw;
   --size-md-button: 4vw;
 }
