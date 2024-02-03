@@ -24,7 +24,16 @@ export default function RootLayout({
           name="viewport"
           content="width=device-width, initial-scale=1, viewport-fit=cover"
         />
-        <meta name="theme-color" content="#072141" />
+        <meta
+          name="theme-color"
+          content="#072141"
+          media="(prefers-color-scheme: light)"
+        />
+        <meta
+          name="theme-color"
+          content="#072141"
+          media="(prefers-color-scheme: dark)"
+        />
       </Head>
       <body className={inter.className}>
         <Navigation />
