@@ -4,7 +4,7 @@
   justify-content: space-around;
   margin-top: 24px;
 
-  @media screen and (min-width: 390px) {
+  @media screen and (min-height: 700px) {
     padding-bottom: 20px;
   }
 }
@@ -34,8 +34,8 @@
   text-wrap: wrap;
   text-transform: uppercase;
 
-  @media screen and (min-width: 390px) {
-    font-size: var(--size-sm-title);
+  @media screen and (min-height: 700px) {
+    font-size: var(--size-md-title);
   }
 }
 .subtitle {
@@ -43,8 +43,8 @@
   font-weight: 400;
   letter-spacing: 1.5px;
 
-  @media screen and (min-width: 390px) {
-    font-size: var(--size-sm-subtitle);
+  @media screen and (min-height: 700px) {
+    font-size: var(--size-md-subtitle);
   }
 }
 
@@ -55,8 +55,8 @@
   line-height: 1.1rem;
   color: var(--white-contentMinor);
 
-  @media screen and (min-width: 390px) {
-    font-size: var(--size-sm-content);
+  @media screen and (min-height: 700px) {
+    font-size: var(--size-md-content);
     letter-spacing: 1.5px;
     line-height: 1.2rem;
   }
