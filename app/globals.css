@@ -11,17 +11,10 @@
 
   --font-title: 'Rubik', sans-serif;
 
-  --size-sm-title: 2.5rem;
-  --size-sm-subtitle: 1.1rem;
-  --size-sm-content: 0.7rem;
-
-  --size-md-title: 3rem;
-  --size-md-subtitle: 1.3rem;
-  --size-md-content: 0.9rem;
-
-  --size-xl-title: 4rem;
-  --size-xl-subtitle: 2rem;
-  --size-xl-content: 1rem;
+  --size-sm-title: 12vw;
+  --size-sm-subtitle: 5vw;
+  --size-sm-content: 3vw;
+  --size-sm-button: 4vw;
 }
 
 * {

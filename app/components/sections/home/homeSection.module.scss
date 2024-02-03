@@ -35,17 +35,19 @@
   text-wrap: wrap;
   width: min-content;
   text-transform: uppercase;
+  font-size: 12vw;
 
-  @media screen and (min-width: 390px) {
-    font-size: var(--size-md-title);
-  }
+  /* @media screen and (min-width: 390px) {
+    font-size: var(--size-sm-title);
+  } */
 }
 .subtitle {
   font-size: var(--size-sm-subtitle);
   font-weight: 400;
   letter-spacing: 1.5px;
+  font-size: 5vw;
 
-  @media screen and (min-width: 390px) {
-    font-size: var(--size-md-subtitle);
-  }
+  /* @media screen and (min-width: 390px) {
+    font-size: var(--size-sm-subtitle);
+  } */
 }
