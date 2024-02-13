@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import styles from './homeSection.module.scss'
 import { Separator } from '../../separator/Separator'
@@ -10,6 +10,7 @@ export const HomeSection = () => {
   const controls = useAnimation()
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref)
+  const [scrollToAbout, setScrollToAbout] = useState(false)
 
   const animationVariants1 = {
     hidden: { transform: 'translateX(-100%)', opacity: 0 },
@@ -62,6 +63,24 @@ export const HomeSection = () => {
         >
           Développeur web
         </motion.h2>
+        <motion.input
+          initial="hidden"
+          animate={controls}
+          variants={animationVariants1}
+          transition={{ duration: 0.4, ease: 'easeOut', delay: 0.3 }}
+          className={styles.showMoreButton}
+          value="En savoir plus"
+          type="button"
+          onClick={() => {
+            const main = document.querySelector('main')
+            const about: HTMLElement | null = document.querySelector('#about')
+
+            main?.scrollTo({
+              top: about?.offsetTop,
+              behavior: 'smooth',
+            })
+          }}
+        />
       </div>
     </section>
   )

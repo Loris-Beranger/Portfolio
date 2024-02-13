@@ -5,13 +5,23 @@
   z-index: -1;
   top: -60px;
   left: calc(50% - 275px);
-  transition: all 1s;
+  transition: all 0.8s;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (min-width: 768px) {
+    width: 100vw;
+    height: 100vw;
+    top: calc(50% - 50vw);
+    left: 30%;
+  }
 }
 .circlesContainer.bottom {
   transform: translateY(400px);
+  @media screen and (min-width: 768px) {
+    left: calc(50% - 50vw);
+  }
 }
 
 .circle {

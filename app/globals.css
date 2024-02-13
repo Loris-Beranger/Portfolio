@@ -20,6 +20,11 @@
   --size-md-subtitle: 6vw;
   --size-md-content: 3vw;
   --size-md-button: 4vw;
+
+  --size-lg-title: 5rem;
+  --size-lg-subtitle: 1.5rem;
+  --size-lg-content: 0.8rem;
+  --size-lg-button: 1.1rem;
 }
 
 * {

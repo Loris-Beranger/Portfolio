@@ -5,18 +5,27 @@ import styles from './circles.module.scss'
 import { useScroll } from '@/app/hooks/useScroll'
 
 export const Circles = () => {
-  const [projectSectionPosition, setProjectSectionPosition] = useState(0)
+  const [positionBottom, setPositionBottom] = useState(false)
   const scrollY = useScroll()
 
   useEffect(() => {
     const sectionProjects = document?.querySelector('#projects') as HTMLElement
-    setProjectSectionPosition(sectionProjects?.offsetTop - 48)
-  }, [])
+    const sectionProjectTop = sectionProjects?.offsetTop - 48
+    const sectionProjectHeight = sectionProjects.getBoundingClientRect().height
 
+    if (
+      scrollY > sectionProjectTop &&
+      scrollY < sectionProjectTop + sectionProjectHeight
+    ) {
+      setPositionBottom(true)
+    } else {
+      setPositionBottom(false)
+    }
+  }, [scrollY])
   return (
     <div
       className={`${styles.circlesContainer} ${
-        scrollY > projectSectionPosition ? styles.bottom : ''
+        positionBottom ? styles.bottom : ''
       }`}
     >
       <div className={styles.circle}></div>

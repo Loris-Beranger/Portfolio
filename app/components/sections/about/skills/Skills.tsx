@@ -13,14 +13,14 @@ export const Skills = () => {
         className={styles.screen}
       />
       <Image
-        src="/w2-1.png"
+        src="/w4.png"
         width={160}
         height={90}
         alt="Picture of the author"
         className={styles.screen}
       />
       <Image
-        src="/w3-1.png"
+        src="/w4-1.png"
         width={130}
         height={140}
         alt="Picture of the author"

@@ -57,98 +57,118 @@ export const ContactSection = () => {
 
   return (
     <section id={'contact'} className={styles.contactContainer}>
-      <motion.h2
-        ref={ref}
-        initial="hidden"
-        animate={controls}
-        variants={animation}
-        transition={{ duration: 0.4, ease: 'easeOut', delay: 0.2 }}
-        className={styles.title}
-      >
-        Contact
-      </motion.h2>
-      <form
-        ref={formRef}
-        className={styles.formContainer}
-        onSubmit={handleSubmit(onSubmit)}
-      >
-        <motion.div
+      <div className={styles.formSectionContainer}>
+        <motion.h2
+          ref={ref}
           initial="hidden"
           animate={controls}
           variants={animation}
-          transition={{ duration: 0.5, ease: 'easeOut', delay: 0.4 }}
-          className={styles.inputContainer}
+          transition={{ duration: 0.4, ease: 'easeOut', delay: 0.2 }}
+          className={styles.title}
         >
-          <label className={styles.labelName} htmlFor="name">
-            Nom
-          </label>
-          <input
-            className={styles.inputName}
-            type="text"
-            placeholder="Beranger"
-            {...(register('name'), { required: true, maxLength: 20 })}
+          Contact
+        </motion.h2>
+        <form
+          ref={formRef}
+          className={styles.formContainer}
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          <motion.div
+            initial="hidden"
+            animate={controls}
+            variants={animation}
+            transition={{ duration: 0.5, ease: 'easeOut', delay: 0.4 }}
+            className={styles.inputContainer}
+          >
+            <label className={styles.labelName} htmlFor="name">
+              Nom
+            </label>
+            <input
+              className={styles.inputName}
+              type="text"
+              placeholder="Beranger"
+              {...(register('name'), { required: true, maxLength: 20 })}
+            />
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            animate={controls}
+            variants={animation}
+            transition={{ duration: 0.5, ease: 'easeOut', delay: 0.4 }}
+            className={styles.inputContainer}
+          >
+            <label className={styles.labelMail} htmlFor="email">
+              Email
+            </label>
+            <input
+              className={styles.inputMail}
+              type="email"
+              placeholder="loris.beranger1@gmail.com"
+              {...(register('mail'), { required: true, maxLength: 60 })}
+            />
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            animate={controls}
+            variants={animation}
+            transition={{ duration: 0.5, ease: 'easeOut', delay: 0.5 }}
+            className={styles.inputContainer}
+          >
+            <label className={styles.labelObject} htmlFor="Site web">
+              Objet
+            </label>
+            <input
+              className={styles.inputObject}
+              type="text"
+              placeholder="Objet"
+              {...(register('object'), { required: true, maxLength: 60 })}
+            />
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            animate={controls}
+            variants={animation}
+            transition={{ duration: 0.5, ease: 'easeOut', delay: 0.6 }}
+            className={styles.inputContainer}
+          >
+            <label className={styles.labelMessage} htmlFor="message">
+              Message
+            </label>
+            <textarea
+              className={styles.inputMessage}
+              placeholder="Bonjour..."
+              {...(register('message'), { required: true })}
+            />
+          </motion.div>
+          <motion.input
+            initial="hidden"
+            animate={controls}
+            variants={animation2}
+            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.7 }}
+            className={styles.inputSubmit}
+            type="submit"
+            value="Envoyer"
           />
-        </motion.div>
-        <motion.div
+        </form>
+      </div>
+      <div className={styles.labelContainer}>
+        <motion.h3
           initial="hidden"
           animate={controls}
           variants={animation}
-          transition={{ duration: 0.5, ease: 'easeOut', delay: 0.4 }}
-          className={styles.inputContainer}
+          transition={{ duration: 0.5, ease: 'easeOut', delay: 0.8 }}
         >
-          <label className={styles.labelMail} htmlFor="email">
-            Email
-          </label>
-          <input
-            className={styles.inputMail}
-            type="email"
-            placeholder="loris.beranger1@gmail.com"
-            {...(register('mail'), { required: true, maxLength: 60 })}
-          />
-        </motion.div>
-        <motion.div
+          Une Requête ?
+        </motion.h3>
+        <motion.h3
           initial="hidden"
           animate={controls}
           variants={animation}
-          transition={{ duration: 0.5, ease: 'easeOut', delay: 0.5 }}
-          className={styles.inputContainer}
+          transition={{ duration: 0.5, ease: 'easeOut', delay: 1 }}
         >
-          <label className={styles.labelObject} htmlFor="Site web">
-            Objet
-          </label>
-          <input
-            className={styles.inputObject}
-            type="text"
-            placeholder="Objet"
-            {...(register('object'), { required: true, maxLength: 60 })}
-          />
-        </motion.div>
-        <motion.div
-          initial="hidden"
-          animate={controls}
-          variants={animation}
-          transition={{ duration: 0.5, ease: 'easeOut', delay: 0.6 }}
-          className={styles.inputContainer}
-        >
-          <label className={styles.labelMessage} htmlFor="message">
-            Message
-          </label>
-          <textarea
-            className={styles.inputMessage}
-            placeholder="Bonjour..."
-            {...(register('message'), { required: true })}
-          />
-        </motion.div>
-        <motion.input
-          initial="hidden"
-          animate={controls}
-          variants={animation2}
-          transition={{ duration: 0.4, ease: 'easeOut', delay: 0.7 }}
-          className={styles.inputSubmit}
-          type="submit"
-          value="Envoyer"
-        />
-      </form>
+          Contactez moi !
+        </motion.h3>
+      </div>
       <Toaster />
     </section>
   )

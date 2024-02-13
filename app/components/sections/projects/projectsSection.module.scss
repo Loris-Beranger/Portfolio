@@ -6,6 +6,17 @@
   margin-top: 24px;
 }
 
+.projectCardsContainer {
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+  }
+}
+
 .title {
   font-size: var(--size-sm-title);
   font-weight: 400;
@@ -15,5 +26,8 @@
 
   @media screen and (min-height: 700px) {
     font-size: var(--size-md-title);
+  }
+  @media screen and (min-width: 768px) {
+    font-size: var(--size-lg-title);
   }
 }

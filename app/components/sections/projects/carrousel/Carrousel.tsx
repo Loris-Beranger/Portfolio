@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from 'react'
 import styles from './carrousel.module.scss'
-import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs'
 import { Indicator } from './indicator/Indicator'
 import Image from 'next/image'
 import { useAnimation, useInView, motion } from 'framer-motion'
