@@ -11,11 +11,11 @@ export const useScroll = () => {
     }
 
     // Vérifiez si le code s'exécute côté client avant d'ajouter l'événement de défilement
-    main?.addEventListener('scroll', onScroll)
+    main?.addEventListener('wheel', onScroll)
 
     // Supprimez l'événement de défilement lors du démontage du composant
     return () => {
-      main?.removeEventListener('scroll', onScroll)
+      main?.removeEventListener('wheel', onScroll)
     }
   }, []) // Assurez-vous que cet effet s'exécute une seule fois lors du montage du composant
 
