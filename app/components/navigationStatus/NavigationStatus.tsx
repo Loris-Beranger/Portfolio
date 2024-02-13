@@ -4,11 +4,7 @@ import { useEffect, useState } from 'react'
 import styles from './navigationStatus.module.scss'
 import { useScroll } from '@/app/hooks/useScroll'
 
-type NavigationStatusProps = {
-  scrollToAbout: boolean
-}
-
-export const NavigationStatus = ({ scrollToAbout }: NavigationStatusProps) => {
+export const NavigationStatus = () => {
   const [activeSection, setActiveSection] = useState('home')
   const [sectionScroll, setSectionScroll] = useState<any>({
     home: [0, 0],
@@ -55,12 +51,6 @@ export const NavigationStatus = ({ scrollToAbout }: NavigationStatusProps) => {
       setActiveSection(getSection(scrollY))
     }
   }, [scrollY])
-
-  useEffect(() => {
-    if (scrollToAbout && sectionScroll) {
-      scrollTo(sectionScroll.about[0])
-    }
-  }, [scrollToAbout])
 
   return (
     <div className={styles.navigationStatusContainer}>
