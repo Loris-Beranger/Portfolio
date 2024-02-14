@@ -43,8 +43,8 @@ export const Card = ({ title, description, image }: CardProps) => {
       >
         <Image
           src={image}
-          width={200}
-          height={200}
+          width={1920}
+          height={1080}
           alt="Picture of the author"
           className={styles.backgroundImage}
         />

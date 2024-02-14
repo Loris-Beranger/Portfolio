@@ -35,8 +35,8 @@ export const HomeSection = () => {
       <div className={styles.imageContainer}>
         <Image
           src="/profile.jpg"
-          width={200}
-          height={200}
+          width={1980}
+          height={1980}
           priority
           alt="Picture of the author"
           className={styles.profilePicture}

@@ -6,7 +6,7 @@ export const useScroll = () => {
   useEffect(() => {
     const main = document.querySelector('main')
 
-    const onScroll = () => {
+    const onScroll = (event: any) => {
       setScrollY(main?.scrollTop || 0)
     }
 

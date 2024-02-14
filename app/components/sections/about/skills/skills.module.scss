@@ -64,6 +64,22 @@
   }
 }
 
+.badgeTitle {
+  opacity: 1;
+  position: absolute;
+  text-align: center;
+  width: 200px;
+  top: -30px;
+  left: calc(50% - 100px);
+  font-size: 1rem;
+  font-weight: 400;
+  transition: 0.3s;
+
+  &.hide {
+    opacity: 0;
+  }
+}
+
 .badge {
   display: flex;
   justify-content: center;
@@ -71,6 +87,7 @@
   width: 45px;
   height: 45px;
   border-radius: 12px;
+  cursor: pointer;
 
   img {
     @media screen and (min-width: 768px) {
@@ -80,30 +97,30 @@
   }
 }
 
-.badge:nth-child(1) {
+.badge:nth-child(2) {
   background: linear-gradient(180deg, #5da7fe 0%, #00387a 100%);
 }
-.badge:nth-child(2) {
+.badge:nth-child(3) {
   background: linear-gradient(180deg, #93ffff 0%, #59a5ff 100%);
 }
-.badge:nth-child(3) {
+.badge:nth-child(4) {
   background: linear-gradient(180deg, #1b05a5 0%, #2b95f7 100%);
 }
-.badge:nth-child(4) {
+.badge:nth-child(5) {
   background: linear-gradient(180deg, #aae0ff 0%, #5affce 100%);
 }
-.badge:nth-child(5) {
+.badge:nth-child(6) {
   background: linear-gradient(180deg, #9d23da 0%, #2ddfc3 100%);
 }
-.badge:nth-child(6) {
+.badge:nth-child(7) {
   background: linear-gradient(180deg, #bbff78 0%, #00540e 100%);
 }
-.badge:nth-child(7) {
+.badge:nth-child(8) {
   background: linear-gradient(180deg, #ffa7c1 0%, #ff5050 100%);
 }
-.badge:nth-child(8) {
+.badge:nth-child(9) {
   background: linear-gradient(180deg, #e9acff 0%, #ff4fce 100%);
 }
-.badge:nth-child(9) {
+.badge:nth-child(10) {
   background: linear-gradient(180deg, #99daff 0%, #a966ff 100%);
 }

@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import styles from './page.module.scss'
 import { Circles } from './components/circles/Circle'
 import { Separator } from './components/separator/Separator'
