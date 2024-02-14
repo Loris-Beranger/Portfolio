@@ -12,12 +12,19 @@
 
 .screen {
   position: absolute;
-  filter: blur(1px);
-  opacity: 0.22;
+
+  img {
+    width: 100%;
+    height: 100%;
+    filter: blur(1px);
+    opacity: 0.22;
+  }
 }
 .screen:nth-child(1) {
   top: 60px;
   right: 20px;
+  width: 180px;
+  height: 100px;
   @media screen and (min-width: 768px) {
     width: 280px;
     height: 200px;
@@ -25,9 +32,13 @@
   }
 }
 .screen:nth-child(2) {
-  top: 160px;
-  left: 50px;
+  top: 100px;
+  left: 20px;
+  width: 130px;
+  height: 150px;
   @media screen and (min-width: 768px) {
+    top: 160px;
+    left: 50px;
     width: 230px;
     height: 250px;
   }
@@ -35,32 +46,12 @@
 .screen:nth-child(3) {
   bottom: 20px;
   left: calc(50% - 60px);
+  width: 200px;
+  height: 80px;
   @media screen and (min-width: 768px) {
     width: 300px;
     height: 180px;
     bottom: 0;
-  }
-}
-
-.badgeContainer {
-  width: 210px;
-  backdrop-filter: blur(3.5px);
-  position: absolute;
-  left: calc(50% - 75px);
-  top: 110px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  row-gap: 16px;
-  flex-wrap: wrap;
-  backdrop-filter: blur(7.5px);
-  background-color: rgba(50, 50, 50, 0.1);
-  border-radius: 50px;
-  padding: 22px;
-  z-index: 20;
-
-  @media screen and (min-width: 768px) {
-    top: 210px;
   }
 }
 
@@ -80,16 +71,45 @@
   }
 }
 
+.badgeContainer {
+  width: 180px;
+  height: 180px;
+  backdrop-filter: blur(3.5px);
+  position: absolute;
+  left: calc(50% - 90px);
+  top: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  row-gap: 16px;
+  /* gap: 16px; */
+  flex-wrap: wrap;
+  backdrop-filter: blur(7.5px);
+  background-color: rgba(50, 50, 50, 0.1);
+  border-radius: 50px;
+  padding: 22px;
+  z-index: 20;
+
+  @media screen and (min-width: 768px) {
+    width: 200px;
+    top: 210px;
+    left: calc(50% - 100px);
+  }
+}
+
 .badge {
   display: flex;
+  width: 40px;
+  height: 40px;
   justify-content: center;
   align-items: center;
-  width: 45px;
-  height: 45px;
   border-radius: 12px;
   cursor: pointer;
 
   img {
+    width: 60%;
+    height: 60%;
+
     @media screen and (min-width: 768px) {
       width: 20px;
       height: 20px;

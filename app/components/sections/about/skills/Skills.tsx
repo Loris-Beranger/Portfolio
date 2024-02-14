@@ -1,35 +1,79 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import styles from './skills.module.scss'
+import { useAnimation, useInView, motion } from 'framer-motion'
 
 export const Skills = () => {
   const [hoverSkill, setHoverSkill] = useState('')
+  const controls = useAnimation()
+  const ref = useRef<HTMLDivElement>(null)
+  const inView = useInView(ref)
+
+  const animationVariants1 = {
+    hidden: { transform: 'translateX(+150%)', opacity: 0 },
+    visible: { transform: 'translateX(0)', opacity: 1 },
+  }
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible')
+    } else {
+      controls.start('hidden')
+    }
+  }, [controls, inView])
   return (
-    <div className={styles.skillsContainer}>
-      <Image
-        src="/w1-1.png"
-        width={1920}
-        height={1080}
-        alt="Picture of the author"
+    <motion.div className={styles.skillsContainer} ref={ref}>
+      <motion.div
         className={styles.screen}
-      />
-      <Image
-        src="/w4.png"
-        width={1920}
-        height={1080}
-        alt="Picture of the author"
+        initial="hidden"
+        animate={controls}
+        variants={animationVariants1}
+        transition={{ duration: 0.3, ease: 'easeOut', delay: 0.4 }}
+      >
+        <Image
+          src="/w1-1.png"
+          width={window.screen.width}
+          height={window.screen.height}
+          alt="Picture of the author"
+        />
+      </motion.div>
+      <motion.div
         className={styles.screen}
-      />
-      <Image
-        src="/w4-1.png"
-        width={1920}
-        height={1080}
-        alt="Picture of the author"
+        initial="hidden"
+        animate={controls}
+        variants={animationVariants1}
+        transition={{ duration: 0.3, ease: 'easeOut', delay: 0.2 }}
+      >
+        <Image
+          src="/w4.png"
+          width={window.screen.width}
+          height={window.screen.height}
+          alt="Picture of the author"
+        />
+      </motion.div>
+      <motion.div
         className={styles.screen}
-      />
-      <div className={styles.badgeContainer}>
+        initial="hidden"
+        animate={controls}
+        variants={animationVariants1}
+        transition={{ duration: 0.3, ease: 'easeOut', delay: 0.3 }}
+      >
+        <Image
+          src="/w4-1.png"
+          width={window.screen.width}
+          height={window.screen.height}
+          alt="Picture of the author"
+        />
+      </motion.div>
+      <motion.div
+        className={styles.badgeContainer}
+        initial="hidden"
+        animate={controls}
+        variants={animationVariants1}
+        transition={{ duration: 0.3, ease: 'easeOut', delay: 0.5 }}
+      >
         <h6
           className={`${styles.badgeTitle} ${
             hoverSkill === '' ? styles.hide : ''
@@ -44,8 +88,8 @@ export const Skills = () => {
         >
           <Image
             src="/img/skills/skill1.png"
-            width={1920}
-            height={1080}
+            width={500}
+            height={500}
             alt="Picture of the author"
           />
         </div>
@@ -56,8 +100,8 @@ export const Skills = () => {
         >
           <Image
             src="/img/skills/skill2.png"
-            width={1920}
-            height={1080}
+            width={500}
+            height={500}
             alt="Picture of the author"
           />
         </div>
@@ -68,8 +112,8 @@ export const Skills = () => {
         >
           <Image
             src="/img/skills/skill3.png"
-            width={1920}
-            height={1080}
+            width={500}
+            height={500}
             alt="Picture of the author"
           />
         </div>
@@ -80,8 +124,8 @@ export const Skills = () => {
         >
           <Image
             src="/img/skills/skill4.png"
-            width={1920}
-            height={1080}
+            width={500}
+            height={500}
             alt="Picture of the author"
           />
         </div>
@@ -92,8 +136,8 @@ export const Skills = () => {
         >
           <Image
             src="/img/skills/skill5.png"
-            width={1920}
-            height={1080}
+            width={500}
+            height={500}
             alt="Picture of the author"
           />
         </div>
@@ -104,8 +148,8 @@ export const Skills = () => {
         >
           <Image
             src="/img/skills/skill6.png"
-            width={1920}
-            height={1080}
+            width={500}
+            height={500}
             alt="Picture of the author"
           />
         </div>
@@ -116,8 +160,8 @@ export const Skills = () => {
         >
           <Image
             src="/img/skills/skill7.png"
-            width={1920}
-            height={1080}
+            width={500}
+            height={500}
             alt="Picture of the author"
           />
         </div>
@@ -128,8 +172,8 @@ export const Skills = () => {
         >
           <Image
             src="/img/skills/skill8.png"
-            width={1920}
-            height={1080}
+            width={500}
+            height={500}
             alt="Picture of the author"
           />
         </div>
@@ -140,12 +184,12 @@ export const Skills = () => {
         >
           <Image
             src="/img/skills/skill9.png"
-            width={1920}
-            height={1080}
+            width={500}
+            height={500}
             alt="Picture of the author"
           />
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   )
 }

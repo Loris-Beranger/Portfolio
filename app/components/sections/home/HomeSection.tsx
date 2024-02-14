@@ -21,6 +21,10 @@ export const HomeSection = () => {
     hidden: { transform: 'translateX(-100%)', opacity: 0 },
     visible: { transform: 'translateX(0)', opacity: 1 },
   }
+  const animationVariants3 = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  }
 
   useEffect(() => {
     if (inView) {
@@ -32,7 +36,13 @@ export const HomeSection = () => {
 
   return (
     <section id="home" className={styles.home}>
-      <div className={styles.imageContainer}>
+      <motion.div
+        className={styles.imageContainer}
+        initial="hidden"
+        animate={controls}
+        variants={animationVariants3}
+        transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
+      >
         <Image
           src="/profile.jpg"
           width={1980}
@@ -41,7 +51,7 @@ export const HomeSection = () => {
           alt="Picture of the author"
           className={styles.profilePicture}
         />
-      </div>
+      </motion.div>
       <div className={styles.contentContainer}>
         <motion.h1
           ref={ref}
