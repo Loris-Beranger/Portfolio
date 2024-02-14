@@ -34,8 +34,8 @@ export const Skills = () => {
       >
         <Image
           src="/w1-1.png"
-          width={window.screen.width}
-          height={window.screen.height}
+          width={1000}
+          height={1000}
           alt="Picture of the author"
         />
       </motion.div>
@@ -48,8 +48,8 @@ export const Skills = () => {
       >
         <Image
           src="/w4.png"
-          width={window.screen.width}
-          height={window.screen.height}
+          width={1000}
+          height={1000}
           alt="Picture of the author"
         />
       </motion.div>
@@ -62,8 +62,8 @@ export const Skills = () => {
       >
         <Image
           src="/w4-1.png"
-          width={window.screen.width}
-          height={window.screen.height}
+          width={1000}
+          height={1000}
           alt="Picture of the author"
         />
       </motion.div>

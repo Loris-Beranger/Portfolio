@@ -84,8 +84,8 @@ export const Carrousel = () => {
         >
           <Image
             src={`/img/projects/${images[index - 1]}`}
-            width={window.screen.width}
-            height={window.screen.height}
+            width={1920}
+            height={1080}
             alt="Picture of the author"
             className={styles.backgroundImage}
           />
