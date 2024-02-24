@@ -1,8 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
 import styles from './navigationStatus.module.scss'
-import { useScroll } from '@/app/hooks/useScroll'
 import useScrollDirectionDetection from '@/app/hooks/useScrollDirection'
 
 export const NavigationStatus = () => {

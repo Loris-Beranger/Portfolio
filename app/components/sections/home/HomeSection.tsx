@@ -1,18 +1,13 @@
 'use client'
 
-import React, { memo, useEffect, useRef, useState } from 'react'
+import React, { memo, useRef } from 'react'
 import Image from 'next/image'
 import styles from './homeSection.module.scss'
 import { Separator } from '../../separator/Separator'
-import { motion, useAnimation, useInView } from 'framer-motion'
-import ScrollDirectionDetector from '@/app/hooks/test'
-import useScrollDetector from '@/app/hooks/test'
+import { motion } from 'framer-motion'
 
 const HomeSection = ({ controlSection, animationSection }: any) => {
-  /* const controls = useAnimation() */
   const ref = useRef<HTMLDivElement>(null)
-  /* const inView = useInView(ref)
-  const [scrollToAbout, setScrollToAbout] = useState(false) */
 
   const animationVariants1 = {
     hidden: { transform: 'translateX(-100%)', opacity: 0 },
@@ -27,15 +22,6 @@ const HomeSection = ({ controlSection, animationSection }: any) => {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
   }
-
-  /* useEffect(() => {
-    if (inView) {
-      controls.start('visible')
-    } else {
-      controls.start('hidden')
-    }
-  }, [controls, inView]) */
-  console.log(animationSection)
 
   return (
     <motion.section

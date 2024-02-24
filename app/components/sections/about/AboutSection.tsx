@@ -1,6 +1,5 @@
 'use client'
 
-// aboutSection.js
 import React, { useEffect, useRef } from 'react'
 import styles from './aboutSection.module.scss'
 import { Separator } from '../../separator/Separator'

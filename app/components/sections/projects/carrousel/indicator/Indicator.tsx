@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react'
-import Image from 'next/image'
 import styles from './indicator.module.scss'
 import { useAnimation, useInView, motion } from 'framer-motion'
 

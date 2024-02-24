@@ -6,17 +6,11 @@ import { Separator } from './components/separator/Separator'
 import { AboutSection } from './components/sections/about/AboutSection'
 import { ProjectsSection } from './components/sections/projects/ProjectsSection'
 import { ContactSection } from './components/sections/contact/ContactSection'
-import ScrollDetector from './hooks/test'
 import { motion, useAnimation } from 'framer-motion'
 import { memo, useEffect, useState } from 'react'
 import useScrollDirectionDetection from './hooks/useScrollDirection'
 import HomeSection from './components/sections/home/HomeSection'
 const Home = () => {
-  /*  const controls1 = useAnimation()
-  const controls2 = useAnimation()
-  const controls3 = useAnimation()
-  const controls4 = useAnimation() */
-
   const [animate1, setAnimate1] = useState('hidden')
   const [animate2, setAnimate2] = useState('hidden')
   const [animate3, setAnimate3] = useState('hidden')
