@@ -5,7 +5,7 @@
   justify-content: center;
   flex-direction: column;
   overflow-y: auto;
-  scroll-snap-type: y mandatory;
+  /* scroll-snap-type: y mandatory; */
   scroll-behavior: smooth;
   padding: 30px 0;
 
@@ -21,8 +21,10 @@
     width: 100%;
     height: 100%;
     color: white;
-    scroll-snap-align: start;
+    /* scroll-snap-align: start; */
     padding-bottom: 20px;
     box-sizing: content-box;
+    position: fixed;
+    top: 0;
   }
 }

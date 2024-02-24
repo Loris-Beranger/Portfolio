@@ -7,7 +7,7 @@ import { Separator } from '../../separator/Separator'
 import { Skills } from './skills/Skills'
 import { motion, useAnimation, useInView } from 'framer-motion'
 
-export const AboutSection = () => {
+export const AboutSection = ({ controlSection, animationSection }: any) => {
   const controls = useAnimation()
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref)
@@ -36,13 +36,20 @@ export const AboutSection = () => {
   }, [controls, inView])
 
   return (
-    <section id="about" className={styles.about}>
+    <motion.section
+      id="about"
+      className={styles.about}
+      initial="hidden"
+      animate={controlSection}
+      variants={animationSection}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+    >
       <Skills />
       <div className={styles.contentContainer}>
         <motion.h1
           ref={ref}
           initial="hidden"
-          animate={controls}
+          animate={controlSection}
           variants={animationVariants1}
           transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
           className={styles.title}
@@ -52,7 +59,7 @@ export const AboutSection = () => {
         <Separator />
         <motion.h2
           initial="hidden"
-          animate={controls}
+          animate={controlSection}
           variants={animationVariants2}
           transition={{ duration: 0.4, ease: 'easeOut', delay: 0.2 }}
           className={styles.subtitle}
@@ -61,7 +68,7 @@ export const AboutSection = () => {
         </motion.h2>
         <motion.p
           initial="hidden"
-          animate={controls}
+          animate={controlSection}
           variants={animationVariants3}
           transition={{ duration: 0.4, ease: 'easeOut', delay: 0.3 }}
           className={styles.paragraph}
@@ -78,6 +85,6 @@ export const AboutSection = () => {
           </span>
         </motion.p>
       </div>
-    </section>
+    </motion.section>
   )
 }

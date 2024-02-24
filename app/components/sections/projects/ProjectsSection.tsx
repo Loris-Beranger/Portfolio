@@ -6,7 +6,7 @@ import { useEffect, useRef } from 'react'
 import { Carrousel } from './carrousel/Carrousel'
 import { Card } from './card/Card'
 
-export const ProjectsSection = () => {
+export const ProjectsSection = ({ controlSection, animationSection }: any) => {
   const controls = useAnimation()
   const ref = useRef<any>(null)
   const inView = useInView(ref)
@@ -30,11 +30,18 @@ export const ProjectsSection = () => {
   }, [controls, inView])
 
   return (
-    <section id={'projects'} className={styles.projects}>
+    <motion.section
+      id={'projects'}
+      className={styles.projects}
+      initial="hidden"
+      animate={controlSection}
+      variants={animationSection}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+    >
       <motion.h2
         ref={ref}
         initial={'hidden'}
-        animate={controls}
+        animate={controlSection}
         variants={animation}
         transition={{ duration: 0.4, ease: 'easeOut', delay: 0.3 }}
         className={styles.title}
@@ -46,7 +53,7 @@ export const ProjectsSection = () => {
       <div className={styles.projectCardsContainer}>
         <motion.div
           initial={'hidden'}
-          animate={controls}
+          animate={controlSection}
           variants={animation2}
           transition={{ duration: 0.4, ease: 'easeOut', delay: 0.4 }}
         >
@@ -58,7 +65,7 @@ export const ProjectsSection = () => {
         </motion.div>
         <motion.div
           initial={'hidden'}
-          animate={controls}
+          animate={controlSection}
           variants={animation2}
           transition={{ duration: 0.4, ease: 'easeOut', delay: 0.7 }}
         >
@@ -71,7 +78,7 @@ export const ProjectsSection = () => {
         </motion.div>
         <motion.div
           initial={'hidden'}
-          animate={controls}
+          animate={controlSection}
           variants={animation2}
           transition={{ duration: 0.4, ease: 'easeOut', delay: 1 }}
         >
@@ -82,6 +89,6 @@ export const ProjectsSection = () => {
           />
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   )
 }

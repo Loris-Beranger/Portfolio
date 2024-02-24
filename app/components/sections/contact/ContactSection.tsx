@@ -13,7 +13,7 @@ type Inputs = {
   object: string
   message: string
 }
-export const ContactSection = () => {
+export const ContactSection = ({ controlSection, animationSection }: any) => {
   const formRef = useRef<HTMLFormElement>(null)
   const { register, handleSubmit } = useForm<Inputs>()
   const controls = useAnimation()
@@ -56,12 +56,19 @@ export const ContactSection = () => {
   }
 
   return (
-    <section id={'contact'} className={styles.contactContainer}>
+    <motion.section
+      id={'contact'}
+      className={styles.contactContainer}
+      initial="hidden"
+      animate={controlSection}
+      variants={animationSection}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+    >
       <div className={styles.formSectionContainer}>
         <motion.h2
           ref={ref}
           initial="hidden"
-          animate={controls}
+          animate={controlSection}
           variants={animation}
           transition={{ duration: 0.4, ease: 'easeOut', delay: 0.2 }}
           className={styles.title}
@@ -75,7 +82,7 @@ export const ContactSection = () => {
         >
           <motion.div
             initial="hidden"
-            animate={controls}
+            animate={controlSection}
             variants={animation}
             transition={{ duration: 0.5, ease: 'easeOut', delay: 0.4 }}
             className={styles.inputContainer}
@@ -92,7 +99,7 @@ export const ContactSection = () => {
           </motion.div>
           <motion.div
             initial="hidden"
-            animate={controls}
+            animate={controlSection}
             variants={animation}
             transition={{ duration: 0.5, ease: 'easeOut', delay: 0.4 }}
             className={styles.inputContainer}
@@ -109,7 +116,7 @@ export const ContactSection = () => {
           </motion.div>
           <motion.div
             initial="hidden"
-            animate={controls}
+            animate={controlSection}
             variants={animation}
             transition={{ duration: 0.5, ease: 'easeOut', delay: 0.5 }}
             className={styles.inputContainer}
@@ -126,7 +133,7 @@ export const ContactSection = () => {
           </motion.div>
           <motion.div
             initial="hidden"
-            animate={controls}
+            animate={controlSection}
             variants={animation}
             transition={{ duration: 0.5, ease: 'easeOut', delay: 0.6 }}
             className={styles.inputContainer}
@@ -142,7 +149,7 @@ export const ContactSection = () => {
           </motion.div>
           <motion.input
             initial="hidden"
-            animate={controls}
+            animate={controlSection}
             variants={animation2}
             transition={{ duration: 0.4, ease: 'easeOut', delay: 0.7 }}
             className={styles.inputSubmit}
@@ -154,7 +161,7 @@ export const ContactSection = () => {
       <div className={styles.labelContainer}>
         <motion.h3
           initial="hidden"
-          animate={controls}
+          animate={controlSection}
           variants={animation}
           transition={{ duration: 0.5, ease: 'easeOut', delay: 0.8 }}
         >
@@ -162,7 +169,7 @@ export const ContactSection = () => {
         </motion.h3>
         <motion.h3
           initial="hidden"
-          animate={controls}
+          animate={controlSection}
           variants={animation}
           transition={{ duration: 0.5, ease: 'easeOut', delay: 1 }}
         >
@@ -170,6 +177,6 @@ export const ContactSection = () => {
         </motion.h3>
       </div>
       <Toaster />
-    </section>
+    </motion.section>
   )
 }

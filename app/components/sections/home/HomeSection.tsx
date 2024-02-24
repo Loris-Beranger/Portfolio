@@ -1,16 +1,18 @@
 'use client'
 
-import React, { useEffect, useRef, useState } from 'react'
+import React, { memo, useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import styles from './homeSection.module.scss'
 import { Separator } from '../../separator/Separator'
 import { motion, useAnimation, useInView } from 'framer-motion'
+import ScrollDirectionDetector from '@/app/hooks/test'
+import useScrollDetector from '@/app/hooks/test'
 
-export const HomeSection = () => {
-  const controls = useAnimation()
+const HomeSection = ({ controlSection, animationSection }: any) => {
+  /* const controls = useAnimation() */
   const ref = useRef<HTMLDivElement>(null)
-  const inView = useInView(ref)
-  const [scrollToAbout, setScrollToAbout] = useState(false)
+  /* const inView = useInView(ref)
+  const [scrollToAbout, setScrollToAbout] = useState(false) */
 
   const animationVariants1 = {
     hidden: { transform: 'translateX(-100%)', opacity: 0 },
@@ -26,22 +28,30 @@ export const HomeSection = () => {
     visible: { opacity: 1 },
   }
 
-  useEffect(() => {
+  /* useEffect(() => {
     if (inView) {
       controls.start('visible')
     } else {
       controls.start('hidden')
     }
-  }, [controls, inView])
+  }, [controls, inView]) */
+  console.log(animationSection)
 
   return (
-    <section id="home" className={styles.home}>
+    <motion.section
+      id="home"
+      className={styles.home}
+      initial="hidden"
+      animate={controlSection}
+      variants={animationSection}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+    >
       <motion.div
         className={styles.imageContainer}
         initial="hidden"
-        animate={controls}
+        animate={controlSection}
         variants={animationVariants3}
-        transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
+        transition={{ duration: 0.8, ease: 'easeOut', delay: 0.8 }}
       >
         <Image
           src="/profile.jpg"
@@ -56,7 +66,7 @@ export const HomeSection = () => {
         <motion.h1
           ref={ref}
           initial="hidden"
-          animate={controls}
+          animate={controlSection}
           variants={animationVariants1}
           transition={{ duration: 0.4, ease: 'easeOut' }}
           className={styles.title}
@@ -66,18 +76,18 @@ export const HomeSection = () => {
         <Separator />
         <motion.h2
           initial="hidden"
-          animate={controls}
+          animate={controlSection}
           variants={animationVariants2}
-          transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
+          transition={{ duration: 0.4, ease: 'easeOut', delay: 0.3 }}
           className={styles.subtitle}
         >
           Développeur web
         </motion.h2>
         <motion.input
           initial="hidden"
-          animate={controls}
+          animate={controlSection}
           variants={animationVariants1}
-          transition={{ duration: 0.4, ease: 'easeOut', delay: 0.3 }}
+          transition={{ duration: 0.4, ease: 'easeOut', delay: 0.6 }}
           className={styles.showMoreButton}
           value="En savoir plus"
           type="button"
@@ -92,6 +102,8 @@ export const HomeSection = () => {
           }}
         />
       </div>
-    </section>
+    </motion.section>
   )
 }
+
+export default memo(HomeSection)
